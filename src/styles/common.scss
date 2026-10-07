@@ -1,0 +1,292 @@
+// ============================================================
+// 全局通用样式 — Personal Dashboard
+// 负责人：engineering-frontend-developer
+// 依据：docs/UI-UX-Design.md 第 2.3、2.4、3.2、6、7.4 节
+// 说明：这里把 variables.scss 的 token 暴露为 CSS 变量，
+//       以支持「浅色 / 深色 / 跟随系统」三态主题（第 7.4 节）。
+//       组件内色值一律引用 var(--pd-*)，尺寸/圆角引用 SCSS token。
+// ============================================================
+@import './mixins.scss';
+
+// ---------- 浅色主题（默认） ----------
+page,
+:root {
+  --pd-color-primary: #{$color-primary};
+  --pd-color-primary-light: #{$color-primary-light};
+  --pd-color-primary-dark: #{$color-primary-dark};
+  --pd-color-primary-bg: #{$color-primary-bg};
+
+  --pd-color-success: #{$color-success};
+  --pd-color-success-bg: #{$color-success-bg};
+  --pd-color-warning: #{$color-warning};
+  --pd-color-warning-bg: #{$color-warning-bg};
+  --pd-color-warning-ink: #{$color-warning-ink};
+  --pd-color-error: #{$color-error};
+  --pd-color-error-bg: #{$color-error-bg};
+  --pd-color-info: #{$color-info};
+  --pd-color-info-bg: #{$color-info-bg};
+
+  --pd-text-primary: #{$color-text-primary};
+  --pd-text-secondary: #{$color-text-secondary};
+  --pd-text-tertiary: #{$color-text-tertiary};
+  --pd-bg-primary: #{$color-bg-primary};
+  --pd-bg-secondary: #{$color-bg-secondary};
+  --pd-bg-page: #{$color-bg-page};
+  --pd-bg-tertiary: #{$color-bg-tertiary};
+  --pd-border: #{$color-border};
+  --pd-divider: #{$color-divider};
+
+  --pd-cat-work: #{$color-cat-work};
+  --pd-cat-study: #{$color-cat-study};
+  --pd-cat-life: #{$color-cat-life};
+  --pd-cat-other: #{$color-cat-other};
+
+  --pd-shadow-xs: #{$shadow-xs};
+  --pd-shadow-sm: #{$shadow-sm};
+  --pd-shadow-md: #{$shadow-md};
+  --pd-shadow-lg: #{$shadow-lg};
+  --pd-shadow-primary: #{$shadow-primary};
+
+  --pd-overlay: #{$color-overlay};
+  --pd-focus-bg: linear-gradient(180deg, #{$color-text-primary} 0%, #{$color-focus-bg-end} 100%);
+}
+
+// ---------- 深色主题（第 7.4 节；阴影减弱，避免深色背景上过重） ----------
+.pd-theme-dark {
+  --pd-color-primary-bg: #{$dark-color-bg-tertiary};
+  --pd-color-success-bg: #{$dark-color-bg-tertiary};
+  --pd-color-warning-bg: #{$dark-color-bg-tertiary};
+  --pd-color-error-bg: #{$dark-color-bg-tertiary};
+  --pd-color-info-bg: #{$dark-color-bg-tertiary};
+
+  --pd-text-primary: #{$dark-color-text-primary};
+  --pd-text-secondary: #{$dark-color-text-secondary};
+  --pd-text-tertiary: #{$dark-color-text-tertiary};
+  --pd-bg-primary: #{$dark-color-bg-primary};
+  --pd-bg-secondary: #{$dark-color-bg-secondary};
+  --pd-bg-page: #{$dark-color-bg-page};
+  --pd-bg-tertiary: #{$dark-color-bg-tertiary};
+  --pd-border: #{$dark-color-border};
+  --pd-divider: #{$dark-color-divider};
+
+  --pd-shadow-xs: 0 2rpx 8rpx rgba(0, 0, 0, 0.2);
+  --pd-shadow-sm: 0 4rpx 12rpx rgba(0, 0, 0, 0.24);
+  --pd-shadow-md: 0 8rpx 24rpx rgba(0, 0, 0, 0.3);
+  --pd-shadow-lg: 0 16rpx 48rpx rgba(0, 0, 0, 0.36);
+  --pd-shadow-primary: 0 8rpx 24rpx rgba(0, 0, 0, 0.35);
+}
+
+// ============================================================
+// 通用工具类
+// ============================================================
+.pd-container {
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}
+
+.pd-page-bg {
+  background-color: var(--pd-bg-page);
+}
+
+.pd-card {
+  @include card-surface($radius-lg);
+}
+
+.pd-divider {
+  height: 1px;
+  background-color: var(--pd-divider);
+}
+
+.pd-ellipsis-1 {
+  @include ellipsis(1);
+}
+
+.pd-ellipsis-2 {
+  @include ellipsis(2);
+}
+
+.pd-ellipsis-3 {
+  @include ellipsis(3);
+}
+
+// 屏幕阅读器可见（视觉隐藏）
+.pd-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// ---------- 字体层级（第 3.2 节） ----------
+.pd-display {
+  font-size: $font-size-5xl;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+}
+
+.pd-h1 {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  line-height: 1.25;
+}
+
+.pd-h2 {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-semibold;
+  line-height: 1.3;
+}
+
+.pd-h3 {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-semibold;
+  line-height: 1.35;
+}
+
+.pd-body-l {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+}
+
+.pd-body {
+  font-size: $font-size-base;
+  line-height: 1.5;
+}
+
+.pd-caption {
+  font-size: $font-size-sm;
+  line-height: 1.4;
+}
+
+.pd-tiny {
+  font-size: $font-size-xs;
+  line-height: 1.3;
+}
+
+.pd-mono {
+  font-family: $font-mono;
+  font-variant-numeric: tabular-nums;
+}
+
+// ---------- 动画（第 4.3 / 4.4 / 4.5 / 6.1 节） ----------
+@keyframes pd-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10rpx);
+  }
+}
+
+@keyframes pd-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes pd-icon-bounce {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pd-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pd-slide-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(24rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pd-achievement-in {
+  from {
+    opacity: 0;
+    transform: translateY(-120rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pd-confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(700px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pd-rainbow-shift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+// ---------- 彩蛋：彩虹模式（第 4.5 节） ----------
+.pd-rainbow {
+  background: linear-gradient(
+    135deg,
+    #{$color-primary},
+    #{$color-info},
+    #{$color-success},
+    #{$color-warning},
+    #{$color-error}
+  );
+  background-size: 400% 400%;
+  animation: pd-rainbow-shift 4s linear infinite;
+  transition: none;
+}
+
+// ---------- 减少动效（第 6.5 节） ----------
+.pd-reduce-motion {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: $motion-reduced-fade !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+@include prefers-reduced-motion {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: $motion-reduced-fade !important;
+  }
+}

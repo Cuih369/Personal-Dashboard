@@ -1,0 +1,116 @@
+// ============================================================
+// Design Tokens — Personal Dashboard（冻结 v1）
+// 来源：docs/UI-UX-Design.md 第 2.3 / 3.1 / 3.2 / 3.3 节
+// 约定：所有页面与组件必须引用此处的 token，禁止硬编码色值/尺寸。
+// ============================================================
+
+// ---------- 主色 ----------
+$color-primary: #6c5ce7; // 柔和紫
+$color-primary-light: #a29bfe;
+$color-primary-dark: #4834d4;
+$color-primary-bg: #f0eeff;
+
+// ---------- 语义色 ----------
+$color-success: #00b894;
+$color-success-bg: #e0fff8;
+$color-warning: #fdcb6e;
+$color-warning-bg: #fff8e1;
+$color-error: #e17055;
+$color-error-bg: #ffebe3;
+$color-info: #0984e3;
+$color-info-bg: #e3f2fd;
+
+// ---------- 中性色（浅色主题） ----------
+$color-text-primary: #2d3436;
+$color-text-secondary: #636e72;
+$color-text-tertiary: #b2bec3;
+$color-bg-primary: #ffffff;
+$color-bg-secondary: #f8f9fa;
+$color-bg-page: #f1f2f6;
+$color-bg-tertiary: #f1f2f6;
+$color-border: #dfe6e9;
+$color-divider: #f1f2f6;
+
+// ---------- 深色主题 ----------
+$dark-color-text-primary: #f1f2f6;
+$dark-color-text-secondary: #b2bec3;
+$dark-color-text-tertiary: #636e72;
+$dark-color-bg-primary: #2d3436;
+$dark-color-bg-secondary: #363e40;
+$dark-color-bg-page: #252a2b;
+$dark-color-bg-tertiary: #41494b;
+$dark-color-border: #4a5254;
+$dark-color-divider: #3d4446;
+
+// ---------- 分类色（统计环形图） ----------
+$color-cat-work: #6c5ce7;
+$color-cat-study: #0984e3;
+$color-cat-life: #00b894;
+$color-cat-other: #fdcb6e;
+
+// ---------- 字体 ----------
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', sans-serif;
+$font-mono: 'SF Mono', 'JetBrains Mono', Consolas, Menlo, monospace;
+
+$font-size-xs: 20rpx; // 10px
+$font-size-sm: 24rpx; // 12px
+$font-size-base: 28rpx; // 14px
+$font-size-md: 30rpx; // 15px
+$font-size-lg: 32rpx; // 16px
+$font-size-xl: 36rpx; // 18px
+$font-size-2xl: 40rpx; // 20px
+$font-size-3xl: 48rpx; // 24px
+$font-size-4xl: 64rpx; // 32px
+$font-size-5xl: 80rpx; // 40px
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// ---------- 间距（4px 基准，rpx = 2px） ----------
+$space-1: 8rpx; // 4px
+$space-2: 16rpx; // 8px
+$space-3: 24rpx; // 12px
+$space-4: 32rpx; // 16px
+$space-5: 40rpx; // 20px
+$space-6: 48rpx; // 24px
+$space-8: 64rpx; // 32px
+$space-10: 80rpx; // 40px
+$space-12: 96rpx; // 48px
+$space-16: 128rpx; // 64px
+$space-20: 160rpx; // 80px
+
+// ---------- 圆角 ----------
+$radius-sm: 8rpx;
+$radius-md: 16rpx;
+$radius-lg: 24rpx;
+$radius-xl: 32rpx;
+$radius-2xl: 48rpx;
+$radius-full: 9999rpx;
+
+// ---------- 阴影 ----------
+$shadow-xs: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+$shadow-sm: 0 4rpx 12rpx rgba(0, 0, 0, 0.06);
+$shadow-md: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 16rpx 48rpx rgba(0, 0, 0, 0.12);
+$shadow-primary: 0 8rpx 24rpx rgba(108, 92, 231, 0.25);
+
+// ---------- 动效 ----------
+$transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// ---------- 布局 ----------
+$container-padding: 32rpx; // 页面左右内边距 16px
+$tab-bar-height: 100rpx; // 底部导航高度 50px
+$safe-bottom: env(safe-area-inset-bottom);
+
+// ---------- 组件尺寸（不可违反：触控目标 >= 88rpx / 44px） ----------
+$btn-height-lg: 96rpx;
+$btn-height-md: 80rpx;
+$btn-height-sm: 64rpx;
+$input-height: 88rpx;
+$hit-target-min: 88rpx;

@@ -1,0 +1,72 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "Personal Dashboard"
+      }
+    },
+    {
+      "path": "pages/onboarding/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "欢迎"
+      }
+    },
+    {
+      "path": "pages/preference-setup/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "偏好设置"
+      }
+    },
+    {
+      "path": "pages/task-list/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "全部任务"
+      }
+    },
+    {
+      "path": "pages/task-edit/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "任务"
+      }
+    },
+    {
+      "path": "pages/focus/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "专注中",
+        "backgroundColor": "#2D3436",
+        "backgroundColorTop": "#2D3436",
+        "backgroundColorBottom": "#1a1d1e"
+      }
+    },
+    {
+      "path": "pages/stats/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "我的统计"
+      }
+    },
+    {
+      "path": "pages/settings/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "我的"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Personal Dashboard",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F1F2F6",
+    "backgroundColorTop": "#F1F2F6",
+    "backgroundColorBottom": "#F1F2F6"
+  }
+}

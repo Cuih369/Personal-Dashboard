@@ -1,0 +1,11 @@
+// ============================================================
+// uni-app 全局 SCSS 变量入口
+// uni-app 会把本文件自动注入到每个组件的 <style lang="scss"> 中，
+// 因此这里无需重复定义 token —— 只做一次转发，避免两份定义漂移。
+//
+// 设计 token 的唯一定义处：src/styles/variables.scss（架构师冻结）
+// 组件内若还需 mixin，按现有约定自行 @import '@/styles/mixins.scss'
+// （mixins.scss 已内部 @import variables.scss）
+// ============================================================
+
+@import '@/styles/variables.scss';

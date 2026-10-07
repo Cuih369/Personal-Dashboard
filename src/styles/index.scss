@@ -1,0 +1,12 @@
+// ============================================================
+// 全局样式入口 — Personal Dashboard
+// 负责人：engineering-frontend-developer
+//
+// 用法（由 src/App.vue 的全局 <style> 引入一次，即可全站生效）：
+//   @import '@/styles/index.scss';
+//
+// 顺序：先重置内置组件默认样式，再注入设计 token 的 CSS 变量与通用类/动画。
+// 注意：页面 / 组件内部只需 @import '@/styles/mixins.scss'（无 CSS 输出，仅变量与 mixin）。
+// ============================================================
+@import './reset.scss';
+@import './common.scss';
